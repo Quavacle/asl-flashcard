@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import CardWrapper from './Components/CardWrapper'
+import Settings from './Components/Settings'
+import Header from './Components/Header'
+import About from './Components/About'
 
 function App() {
+  const [about, setAbout] = useState(false)
+  const [settings, setSettings] = useState(false)
+  const [free, setFree] = useState(true)
+  const [nextTime, setNextTime] = useState(null)
+  const [random, setRandom] = useState(false)
+  const [imageFirst, setImageFirst] = useState(true)
+  const [simul, setSimul] = useState(false)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {about ? <About setAbout={setAbout} /> : null}
+      {settings
+        ? <Settings
+          setOpen={setSettings}
+          setFree={setFree}
+          setNextTime={setNextTime}
+          nextTime={nextTime}
+          setRandom={setRandom}
+          random={random}
+          setImageFirst={setImageFirst}
+          imageFirst={imageFirst}
+          setSimul={setSimul}
+          simul={simul}
+        />
+        : null}
+      <Header setOpen={setSettings} setAbout={setAbout} />
+      <CardWrapper
+        free={free}
+        nextTime={nextTime}
+        random={random}
+        imageFirst={imageFirst}
+        simul={simul}
+      />
     </div>
   );
 }
