@@ -7,30 +7,29 @@
   align-items: center;
 }
 
-
-
 body {
   font-family: 'Russo One', sans-serif;
   margin: 1rem;
   background-color: darkslateblue;
 }
- h2 {
-   font-size: 50px;
-   color: white;
- }
 
- h1 {
-   vertical-align: middle;
-    font-size: 45px;
-   color: white;
-   -webkit-text-stroke-width: 1px;
+h2 {
+  font-size: 50px;
+  color: white;
+}
+
+h1 {
+  vertical-align: middle;
+  font-size: 45px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 1);
- }
+}
 
- .nav > h1 {
-   color: green;
-   font-size: 20000px;
- }
+.nav > h1 {
+  color: green;
+  font-size: 20000px;
+}
 
 .about-button {
   position: absolute;
@@ -45,36 +44,63 @@ body {
    background-color: rgba(255, 255, 255, 0.7)
  }
  
- .header > button:hover {
-   animation-name: bounce;
-   animation-duration: 0.5s;
-   animation-timing-function: ease-in-out;
-   animation-iteration-count: infinite;
-   animation-direction: alternate;
- }
+.header > button:hover {
+ animation-name: bounce;
+ animation-duration: 0.5s;
+ animation-timing-function: ease-in-out;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+}
 
- @keyframes bounce {
-    from {
-      transform: translateY(0%);
-    }
-    to {
-      transform: translateY(-15%);
-    }
- }
+@keyframes bounce {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-15%);
+  }
+}
 
 
- .settings-button {
+.settings-button {
   position: absolute;
   top: 20px;
   right: 20px;
- }
+}
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about > button {
+  font-size: 25px;
+}
+.links > a {
+  border: 2px solid rgba(205, 40, 101, 0.9);
+  color: mistyrose;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-radius: 4px;
+  padding: 2px 2px 2px 2px;
+}
+
+.links > a:hover {
+  background-color: rgba(205, 40, 101, 0.9);
+}
+
+.links {
+  font-size: 20px;
+ display: flex;
+ justify-content: space-around;
+ width: 60vw;
+}
 .header {
   margin-top: 5px;
   margin-bottom: 20px;
   background-color: rgba(205, 40, 101, 0.9);
-  /* border-bottom: 2px solid lightblue;
-  border-top: 2px solid lightblue; */
   text-align: center;
   box-shadow: 12px 12px 2px 1px rgba(119, 30, 62, 0.6);
   border-radius: 4px;
@@ -92,9 +118,11 @@ body {
   text-align: center;
   font-size: 45px;
 }
+
 .simul > h1 {
   font-size: 45px;
 }
+
 .nav-wrapper {
   overflow: hidden;
   display: flex;
@@ -110,17 +138,6 @@ body {
   border-radius: 4px;
 }
 
-.card {
- 
-  perspective: 1000px;
-  margin-top: 15px;
-  margin-right: 10px;
-  text-align: center;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-}
-
 .card-holder {
   flex: 3 0;
   perspective: 1000px;
@@ -131,9 +148,15 @@ body {
   overflow: hidden;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
-.back > h1 {
-  font-size: 200px;
-  padding: 5px 5px 5px 5px;
+
+.card {
+  perspective: 1000px;
+  margin-top: 15px;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 .card-body {
@@ -153,6 +176,11 @@ body {
   backface-visibility: hidden;
 }
 
+.back > h1 {
+  font-size: 200px;
+  padding: 5px 5px 5px 5px;
+}
+
 .true {
   transform: rotateY(0deg);
   transition: all 0.8s;
@@ -168,7 +196,6 @@ body {
   transform: rotateY(180deg);
   transition: ease-in-out;
 }
-
 
 .nav {
   display: flex;
@@ -199,22 +226,11 @@ img {
 .slide-in {
   transition: 0.5s all;
   background-color: pink !important;
-  transform: rotate3d
-  
 }
 
 .slide-out {
   transform: translateX(-100vw) translateY(100vh) rotate(-30deg);
   transition: 0.5s all;
-  
-}
-
-
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .modal:before {
@@ -243,6 +259,7 @@ img {
 .about {
   color: white;
 }
+
 .settings-wrapper {
   height: 75%;
   display: flex;
@@ -301,4 +318,38 @@ button:hover {
   color: white;
   background-color: rgba(205, 40, 101, 0.9);
   font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .settings-wrapper {
+    height: 90vh;
+  }
+  sub {
+    display: none;
+  }
+  .settings {
+    position: absolute;
+    top: 5%;
+    font-size: 15px;
+  }
+  .apply {
+    background: rgba(0, 0, 0, 0.26);
+    border: 2px solid rgba(34, 17, 23, 0.9);
+    border-radius: 4px;
+  }
+  .control {
+    background-color: unset;
+    border: unset;
+    margin-top: 5px;
+  }
+  label {
+    margin-bottom: 2px;
+  }
+  .apply {
+    flex-direction: column;
+  }
+
+  .apply > * {
+    flex: 1 1;
+  }
 }
