@@ -78,6 +78,14 @@ h1 {
 .about > button {
   font-size: 25px;
 }
+
+.signature {
+  text-align: center;
+}
+.signature > p {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
 .links > a {
   border: 2px solid rgba(205, 40, 101, 0.9);
   color: mistyrose;
@@ -206,6 +214,7 @@ h1 {
   flex: 1;
   text-align: center;
   transition: 0.4s ease-in-out;
+
 }
 
 .nav:hover {
@@ -321,6 +330,21 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+  .header > h1 {
+    font-size: 2rem;
+  }
+
+  .header > button {
+    width: 5rem;
+    height: 3rem;
+  }
+  .signature {
+    font-size: 15px;
+  }
+  .signature> p {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .settings-wrapper {
     height: 90vh;
   }
